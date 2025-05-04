@@ -940,89 +940,119 @@ void PS1(){
 
   //Ring 2 (for LB)
 
-  chassis.pid_turn_set(52_deg,120);
+  chassis.pid_turn_set(45_deg,120);
   chassis.pid_wait();
 
 
-  chassis.pid_drive_set(95_cm,120);
+  chassis.pid_drive_set(70_cm,120);
   chassis.pid_wait();
 
-  chassis.pid_swing_set(ez::LEFT_SWING, 90_deg, 120);
-  chassis.pid_wait();
-  
+
+  /*////NextState();
+  for (int i = 0; i < 50; i++) {
+    LbSet(setval);
+    pros::delay(10);
+  }
+
   //LB set
-  pros::delay(200);
+  //LB.move_absolute(300, 80);
 
-  LB.move(90);
-
-  pros::delay(320);
-
-  LB.move(0);
-
-  pros::delay(200);
-
+  pros::delay(500);
+  
   //LB Set End///////////////////
-  chassis.pid_drive_set(40_cm,120);
+
+  chassis.pid_drive_set(60_cm,80);
+  chassis.pid_wait();
+
+  chassis.pid_drive_set(10_cm,100);
   chassis.pid_wait();
 
   pros::delay(500);
 
+  chassis.pid_drive_set(-10_cm,100);
+  chassis.pid_wait();
+
+
+
 
   //Go to RING 3 and score wall
 
-  chassis.pid_drive_set(-45_cm,120);
+  chassis.pid_drive_set(-27_cm,120);
   chassis.pid_wait();
 
+  for (int i = 0; i < 12; i++) {
+    Intake.move(15);
+
+    pros::delay(20);
+
+    Intake.move(-100);
+
+    pros::delay(20);
+  }
+
+
+  
+
+  chassis.pid_swing_set(ez::RIGHT_SWING, 180_deg, 120, 0, ez::cw);
+  chassis.pid_wait();
+
+
+  Intake.move(15);
+
+  pros::delay(50);
+
+  //LB up
+  LB.move_absolute(400, 80);
+
+  pros::delay(500);
+
+  chassis.pid_drive_set(10_cm,80);
+  chassis.pid_wait();
 
   Intake.move(-100);
 
-  chassis.pid_swing_set(ez::LEFT_SWING, 0_deg, 120, 0, ez::ccw);
+  chassis.pid_drive_set(40_cm,40);
   chassis.pid_wait();
 
+  //LBscore
 
-  Intake.move(30);
+  LB.move_absolute(1500, 80);
 
-  pros::delay(200);
+  pros::delay(1000);
 
-  LB.move(80);
+  //reset
 
-  pros::delay(300);
+  LB.move_absolute(0, 100);
 
-  LB.move(0);
-
-  Intake.move(-100);
-
-  chassis.pid_drive_set(50_cm,80);
+  chassis.pid_drive_set(-35_cm,50);
   chassis.pid_wait();
 
-  LB.move(70);
+  //pros::delay(999999);////////////////////////////////////////////////////////////
 
-  pros::delay(600);
+*/
+  ////////////////////////////repcode///////////////
 
-  LB.move(0);
 
-  chassis.pid_drive_set(-35_cm,80);
+  chassis.pid_turn_set(0_deg,120);
   chassis.pid_wait();
 
-  LB.move(-100);
+  chassis.pid_drive_set(30_cm,120);
+  chassis.pid_wait();
 
+  pros::delay(400);
+
+  chassis.pid_drive_set(-25_cm,120);
+  chassis.pid_wait();
 
 
   //ring 4,5,6
+
   chassis.pid_turn_set(270_deg,120);
   chassis.pid_wait();
 
   LB.move(00);
 
-  chassis.pid_drive_set(60_cm,90);
-  chassis.pid_wait();
-
-  chassis.pid_turn_set(265_deg,120);
-  chassis.pid_wait();
-
-  pros::delay(400);
-
-  chassis.pid_drive_set(60_cm,90);
+  chassis.pid_drive_set(66_cm,120);
   chassis.pid_wait();
 
   chassis.pid_turn_set(270_deg,120);
@@ -1030,10 +1060,22 @@ void PS1(){
 
   pros::delay(400);
 
-  chassis.pid_drive_set(30_cm,90);
+  chassis.pid_drive_set(60_cm,120);
+  chassis.pid_wait();
+
+  chassis.pid_turn_set(280_deg,120);
+  chassis.pid_wait();
+
+  pros::delay(400);
+
+  chassis.pid_drive_set(15_cm,120);
   chassis.pid_wait();
 
   pros::delay(500);
+
+
+
+
   // Ring 6
 
   chassis.pid_swing_set(ez::RIGHT_SWING, 0_deg, 120, 20, ez::cw);
@@ -1408,9 +1450,9 @@ void PS4(){
 }
 
 void programmingSkills(){
-  //PS1();
-  PS2();
-  PS3();
+  PS1();
+  //PS2();
+  //PS3();
   //PS4();
 }
 // . . .
