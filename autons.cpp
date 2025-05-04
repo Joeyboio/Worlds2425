@@ -587,7 +587,7 @@ void BlueNegative(){
 
   Intake.move(-100);
 
-  chassis.pid_drive_set(70_cm,100);
+  chassis.pid_drive_set(70_cm,110);
   chassis.pid_wait();
 
 
