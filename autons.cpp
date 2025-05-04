@@ -5,6 +5,10 @@
 #include "pros/rtos.hpp"
 #include "subsystems.hpp"
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////This file is for autonomous programs////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 /////
 // For installation, upgrading, documentations, and tutorials, check out our website!
 // https://ez-robotics.github.io/EZ-Template/
@@ -587,7 +591,7 @@ void BlueNegative(){
 
   Intake.move(-100);
 
-  chassis.pid_drive_set(70_cm,110);
+  chassis.pid_drive_set(70_cm,100);
   chassis.pid_wait();
 
 
